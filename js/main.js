@@ -35,7 +35,7 @@
         themeToggleBtn.setAttribute('title', 'Switch to dark theme');
       }
     } else {
-      root.removeAttribute('data-theme');
+      root.setAttribute('data-theme', 'dark');
       if (themeToggleBtn) {
         themeToggleBtn.setAttribute('aria-label', 'Switch to light theme');
         themeToggleBtn.setAttribute('title', 'Switch to light theme');
@@ -151,13 +151,20 @@
   const canvas = document.getElementById('hero-canvas');
   if (canvas && !isReducedMotion) {
     const ctx = canvas.getContext('2d');
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    const initialWidth = window.innerWidth;
+    const initialHeight = window.innerHeight;
+    const initialNodeCount = Math.max(16, Math.min(32, Math.floor(initialWidth / 45)));
+
+    let width = initialWidth;
+    let height = initialHeight;
+    canvas.width = width;
+    canvas.height = height;
+
     let animationFrameId = null;
     let isCanvasVisible = true;
+    let nodeCount = initialNodeCount;
 
     // Node definitions representing system components
-    const NODE_COUNT = Math.max(16, Math.min(32, Math.floor(window.innerWidth / 45)));
     const nodes = [];
     const mouse = { x: -1000, y: -1000, radius: 120 };
 
@@ -229,7 +236,7 @@
     function initNetwork() {
       nodes.length = 0;
       packets.length = 0;
-      for (let i = 0; i < NODE_COUNT; i++) {
+      for (let i = 0; i < nodeCount; i++) {
         nodes.push(new NetworkNode(width, height));
       }
     }
@@ -283,19 +290,37 @@
       animationFrameId = requestAnimationFrame(renderNetwork);
     }
 
-    // Window resize handler
+    // Debounced window resize handler
+    let resizeTimer = null;
     function handleResize() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-      initNetwork();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        const newW = window.innerWidth;
+        const newH = window.innerHeight;
+        nodeCount = Math.max(16, Math.min(32, Math.floor(newW / 45)));
+        width = canvas.width = newW;
+        height = canvas.height = newH;
+        updateCanvasRect();
+        initNetwork();
+      }, 150);
     }
 
-    window.addEventListener('resize', handleResize);
+    let canvasRect = null;
+    function updateCanvasRect() {
+      if (canvas) {
+        canvasRect = canvas.getBoundingClientRect();
+      }
+    }
+    updateCanvasRect();
+
+    window.addEventListener('resize', handleResize, { passive: true });
+    window.addEventListener('scroll', updateCanvasRect, { passive: true });
+
     window.addEventListener('mousemove', function (e) {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    });
+      if (!canvasRect) return;
+      mouse.x = e.clientX - canvasRect.left;
+      mouse.y = e.clientY - canvasRect.top;
+    }, { passive: true });
 
     window.addEventListener('mouseleave', function () {
       mouse.x = -1000;
@@ -453,5 +478,55 @@
         behavior: 'smooth'
       });
     });
+  }
+
+  // -------------------------------------------------------------------------
+  // 9. Scroll-Progress Indicator
+  // -------------------------------------------------------------------------
+  const scrollProgressEl = document.getElementById('scroll-progress');
+  if (scrollProgressEl) {
+    let isProgressTicking = false;
+    window.addEventListener('scroll', function () {
+      if (!isProgressTicking) {
+        window.requestAnimationFrame(function () {
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrolled = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+          scrollProgressEl.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+          isProgressTicking = false;
+        });
+        isProgressTicking = true;
+      }
+    }, { passive: true });
+  }
+
+  // -------------------------------------------------------------------------
+  // 10. Progressive Section & Card Reveal (Respects prefers-reduced-motion)
+  // -------------------------------------------------------------------------
+  if (!isReducedMotion && 'IntersectionObserver' in window) {
+    const revealTargets = document.querySelectorAll(
+      '.section-title, .pillar-card, .skill-group-card, .exp-card, .project-card, .ai-ml-column, .achievement-card, .education-card, .contact-channels-card'
+    );
+
+    if (revealTargets.length > 0) {
+      const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target); // Unobserve immediately to save resources
+            }
+          });
+        },
+        {
+          rootMargin: '0px 0px -40px 0px',
+          threshold: 0.1
+        }
+      );
+
+      revealTargets.forEach(function (target) {
+        target.classList.add('js-reveal');
+        revealObserver.observe(target);
+      });
+    }
   }
 })();

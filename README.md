@@ -73,10 +73,17 @@ portfoolio/
 └── README.md               # Documentation, architecture, and deployment guide
 ```
 
----
-
 ## 🎨 Design System & Visual Strategy
 
+- **Personal Branding Hierarchy:**
+  - Distinct navbar branding with "Kumar Harsh" at 18–20px semibold.
+  - Tasteful "KUMAR HARSH" identity label with technical tracking immediately above the hero headline.
+  - Deliberate hierarchy: Personal Identity &rarr; Positioning &rarr; Specializations &rarr; Supporting details.
+- **Scroll Progress & Transitions:**
+  - Real-time thin teal scroll progress indicator at the top of the viewport.
+  - Progressive section-entry animations via `IntersectionObserver` with zero content-hiding if JavaScript is disabled.
+- **Architecture Blueprints:**
+  - Verified SVG architecture diagrams for Phone PC Hypnotiser (concurrency & Win32 interop), HCP CRM (LangGraph StateGraph & tool latency slashing), and Enterprise Rental System (layered Spring Boot architecture & RBAC).
 - **Default Theme:** Dark Charcoal (`#0b0f17` background with `#131c2d` elevated cards and `#1e293b` borders).
 - **Alternative Theme:** Elegant Light (`#f8fafc` background with crisp `#ffffff` cards and high contrast text).
 - **Accent:** Precision Teal (`#14b8a6` / `#2dd4bf` / `#0d9488`).
@@ -88,7 +95,7 @@ portfoolio/
   - Full keyboard focus rings (`:focus-visible`).
   - Screen reader semantic elements (`<header>`, `<main>`, `<nav>`, `<article>`, `<section>`, `<footer>`).
   - `@media (prefers-reduced-motion: reduce)` support that disables canvas loops and smooth transitions for sensitive users.
-  - WCAG AA/AAA color contrast compliance.
+  - WCAG AA/AAA color contrast compliance (100/100 Lighthouse Accessibility score).
 
 ---
 

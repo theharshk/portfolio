@@ -138,6 +138,22 @@ async function runTests() {
       detail: `is-open removed & aria-expanded=false: ${mobileNavClosed}`
     });
 
+    // Mobile Hero Brand Size
+    const heroNameMobile = await evaluate(`(() => {
+      const nameEl = document.getElementById('hero-name');
+      if (!nameEl) return null;
+      const style = window.getComputedStyle(nameEl);
+      return {
+        fontSize: parseFloat(style.fontSize),
+        fontWeight: style.fontWeight
+      };
+    })()`);
+    results.push({
+      test: '360px: Hero personal brand "KUMAR HARSH" scales to mobile range (36–48px)',
+      passed: heroNameMobile && heroNameMobile.fontSize >= 36 && heroNameMobile.fontSize <= 48,
+      detail: `Mobile font size: ${heroNameMobile?.fontSize}px (weight: ${heroNameMobile?.fontWeight})`
+    });
+
     // TEST 3: Responsive Viewport - 768px (Tablet)
     console.log('\n--- Testing 768px Viewport (Tablet) ---');
     await setViewport(768, 1024);
@@ -156,6 +172,89 @@ async function runTests() {
       test: '1280px: No horizontal overflow (scrollWidth <= 1280)',
       passed: scrollWidth1280 <= 1280,
       detail: `scrollWidth = ${scrollWidth1280}px (innerWidth = 1280px)`
+    });
+
+    // TEST 4B: Wide Desktop - 1440px
+    console.log('\n--- Testing 1440px Viewport (Wide Desktop) ---');
+    await setViewport(1440, 900);
+    const scrollWidth1440 = await evaluate('document.documentElement.scrollWidth');
+    results.push({
+      test: '1440px: No horizontal overflow (scrollWidth <= 1440)',
+      passed: scrollWidth1440 <= 1440,
+      detail: `scrollWidth = ${scrollWidth1440}px (innerWidth = 1440px)`
+    });
+
+    // TEST 4C: Navbar Brand Typography (18-20px semibold)
+    console.log('\n--- Testing Navbar Personal Branding Typography ---');
+    const brandTypography = await evaluate(`(() => {
+      const nameEl = document.querySelector('.brand-name');
+      const style = window.getComputedStyle(nameEl);
+      const fontSizePx = parseFloat(style.fontSize);
+      const fontWeight = style.fontWeight;
+      return { text: nameEl.innerText, fontSizePx, fontWeight };
+    })()`);
+    results.push({
+      test: 'Navbar branding: "Kumar Harsh" is ~18–20px semibold (600)',
+      passed: brandTypography.fontSizePx >= 18 && brandTypography.fontSizePx <= 21 && (brandTypography.fontWeight === '600' || brandTypography.fontWeight === 'bold'),
+      detail: `Text: "${brandTypography.text}", Size: ${brandTypography.fontSizePx}px, Weight: ${brandTypography.fontWeight}`
+    });
+
+    // TEST 4D: Hero Personal Brand Typography (Desktop 1440px)
+    console.log('\n--- Testing Hero Personal Brand Typography (Desktop 1440px) ---');
+    const heroTypographyDesktop = await evaluate(`(() => {
+      const badgeWrapper = document.querySelector('.status-badge-wrapper');
+      const nameEl = document.getElementById('hero-name');
+      const headline = document.getElementById('hero-heading');
+      if (!badgeWrapper || !nameEl || !headline) return null;
+
+      const badgeBeforeName = badgeWrapper.compareDocumentPosition(nameEl) & Node.DOCUMENT_POSITION_FOLLOWING;
+      const nameBeforeHeadline = nameEl.compareDocumentPosition(headline) & Node.DOCUMENT_POSITION_FOLLOWING;
+
+      const nameStyle = window.getComputedStyle(nameEl);
+      const headlineStyle = window.getComputedStyle(headline);
+
+      return {
+        nameText: nameEl.innerText.trim(),
+        headlineText: headline.innerText.trim(),
+        badgeBeforeName: !!badgeBeforeName,
+        nameBeforeHeadline: !!nameBeforeHeadline,
+        nameFontSize: parseFloat(nameStyle.fontSize),
+        nameFontWeight: nameStyle.fontWeight,
+        headlineFontSize: parseFloat(headlineStyle.fontSize),
+        headlineFontWeight: headlineStyle.fontWeight
+      };
+    })()`);
+
+    results.push({
+      test: 'Hero personal brand: "KUMAR HARSH" is headline-sized (56–72px desktop, bold 800) above secondary headline (38–48px)',
+      passed: heroTypographyDesktop &&
+              heroTypographyDesktop.nameText === 'KUMAR HARSH' &&
+              heroTypographyDesktop.badgeBeforeName &&
+              heroTypographyDesktop.nameBeforeHeadline &&
+              heroTypographyDesktop.nameFontSize >= 56 &&
+              heroTypographyDesktop.nameFontSize <= 72 &&
+              (heroTypographyDesktop.nameFontWeight === '800' || heroTypographyDesktop.nameFontWeight === 'bold') &&
+              heroTypographyDesktop.headlineFontSize >= 38 &&
+              heroTypographyDesktop.headlineFontSize <= 48,
+      detail: `Name: "${heroTypographyDesktop?.nameText}" (${heroTypographyDesktop?.nameFontSize}px, wt: ${heroTypographyDesktop?.nameFontWeight}) | Headline: ${heroTypographyDesktop?.headlineFontSize}px | Hierarchy valid: ${heroTypographyDesktop?.badgeBeforeName && heroTypographyDesktop?.nameBeforeHeadline}`
+    });
+
+    // TEST 4E: Scroll Progress Indicator & Progressive Reveal
+    console.log('\n--- Testing Scroll Progress Bar ---');
+    const scrollTest = await evaluate(`(async () => {
+      const bar = document.getElementById('scroll-progress');
+      if (!bar) return { exists: false };
+      window.scrollTo(0, 1000);
+      window.dispatchEvent(new Event('scroll'));
+      await new Promise(r => setTimeout(r, 150));
+      const width = bar.style.width;
+      window.scrollTo(0, 0);
+      return { exists: true, widthScrolled: width };
+    })()`);
+    results.push({
+      test: 'Scroll-progress indicator exists and updates width on scrolling',
+      passed: scrollTest.exists && parseFloat(scrollTest.widthScrolled) > 0,
+      detail: `Bar exists: ${scrollTest.exists}, width after scroll: ${scrollTest.widthScrolled}`
     });
 
     // TEST 5: Theme Toggle Functionality
@@ -177,9 +276,14 @@ async function runTests() {
       detail: `Dark -> ${themeTest.afterClick1} (stored: ${themeTest.stored}) -> ${themeTest.afterClick2}`
     });
 
-    // TEST 6: Project Case Studies Toggle
-    console.log('\n--- Testing Expandable Project Case Studies ---');
+    // TEST 6: Project Case Studies Toggle & Architecture Diagrams
+    console.log('\n--- Testing Expandable Project Case Studies & Architecture Diagrams ---');
     const caseStudies = await evaluate(`(() => {
+      const svg1 = document.querySelector('#case-study-hypnotiser .architecture-svg');
+      const svg2 = document.querySelector('#case-study-hcp-crm .architecture-svg');
+      const svg3 = document.querySelector('#case-study-rental .architecture-svg');
+      const allSvgPresent = !!(svg1 && svg2 && svg3);
+
       const btn1 = document.querySelector('button[aria-controls="case-study-hypnotiser"]');
       const drawer1 = document.getElementById('case-study-hypnotiser');
       btn1.click();
@@ -197,8 +301,13 @@ async function runTests() {
       btn3.click();
       const open3 = drawer3.classList.contains('is-open') && !drawer3.hasAttribute('hidden');
 
-      return { open1, closed1, open2, open3 };
+      return { open1, closed1, open2, open3, allSvgPresent };
     })()`);
+    results.push({
+      test: 'Architecture SVG blueprints embedded in all 3 case studies',
+      passed: caseStudies.allSvgPresent === true,
+      detail: `SVG diagrams present: ${caseStudies.allSvgPresent}`
+    });
     results.push({
       test: 'All project case study drawers expand and collapse smoothly with correct ARIA attributes',
       passed: caseStudies.open1 && caseStudies.closed1 && caseStudies.open2 && caseStudies.open3,

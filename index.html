@@ -27,15 +27,22 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Google Fonts: Inter & JetBrains Mono (Preloaded and Non-Render-Blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
   <!-- Accessible Skip Navigation -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
@@ -103,19 +110,25 @@
     <!-- -----------------------------------------------------------------------
          Hero Section
          ----------------------------------------------------------------------- -->
-    <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+    <section id="hero" class="hero-section" aria-labelledby="hero-name">
       <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
       <div class="container hero-container">
         
-        <!-- Discreet Open to Roles Indicator -->
-        <div class="status-badge">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span class="status-text">Open to Software Engineer roles</span>
+        <!-- Availability Badge on its own line -->
+        <div class="status-badge-wrapper">
+          <div class="status-badge">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="status-text">Open to Software Engineer roles</span>
+          </div>
         </div>
 
-        <h1 id="hero-heading" class="hero-title">
+        <!-- Prominent Personal Brand Name -->
+        <h1 id="hero-name" class="hero-name">KUMAR HARSH</h1>
+
+        <!-- Professional Positioning Headline -->
+        <p id="hero-heading" class="hero-title">
           Software Engineer building systems, applications &amp; AI.
-        </h1>
+        </p>
 
         <div class="hero-specialization">
           <span>Backend Engineering</span>
@@ -576,6 +589,55 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                 <span>ENGINEERING DEEP DIVE &bull; PHONE PC HYPNOTISER</span>
               </div>
+
+              <!-- Verified Architecture & Concurrency Blueprint -->
+              <div class="architecture-diagram-container">
+                <div class="diagram-header">
+                  <span class="diagram-tag">SYSTEM BLUEPRINT &bull; CONCURRENCY &amp; WIN32 INTEROP</span>
+                  <span class="diagram-legend">Full-Duplex WS &bull; Capacity-1 Backpressure</span>
+                </div>
+                <svg class="architecture-svg" viewBox="0 0 740 135" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Phone PC Hypnotiser Concurrency Flow">
+                  <defs>
+                    <marker id="arrow-teal1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--accent-base)"/>
+                    </marker>
+                  </defs>
+                  <rect x="8" y="20" width="130" height="95" rx="8" class="diag-node-bg"/>
+                  <text x="73" y="48" text-anchor="middle" class="diag-text-title">Mobile Client</text>
+                  <text x="73" y="66" text-anchor="middle" class="diag-text-sub">Touch &amp; Gyro Sensor</text>
+                  <text x="73" y="82" text-anchor="middle" class="diag-text-sub">Canvas Frame Decoder</text>
+                  <text x="73" y="99" text-anchor="middle" class="diag-text-accent">Local Wi-Fi Browser</text>
+
+                  <path d="M138 67 H180" class="diag-arrow" marker-end="url(#arrow-teal1)"/>
+                  <text x="159" y="60" text-anchor="middle" class="diag-wire-label">Full-Duplex</text>
+
+                  <rect x="182" y="10" width="180" height="115" rx="8" class="diag-node-bg"/>
+                  <text x="272" y="34" text-anchor="middle" class="diag-text-title">Spring Boot 3 Server</text>
+                  <text x="272" y="52" text-anchor="middle" class="diag-text-accent">Bounded Queue (Cap: 1)</text>
+                  <text x="272" y="70" text-anchor="middle" class="diag-text-sub">ACK-Based Backpressure</text>
+                  <text x="272" y="88" text-anchor="middle" class="diag-text-sub">Drop Unacknowledged</text>
+                  <text x="272" y="106" text-anchor="middle" class="diag-text-sub">Thread Isolation Pools</text>
+
+                  <path d="M362 67 H404" class="diag-arrow" marker-end="url(#arrow-teal1)"/>
+                  <text x="383" y="60" text-anchor="middle" class="diag-wire-label">&lt;5ms Lag</text>
+
+                  <rect x="406" y="20" width="155" height="95" rx="8" class="diag-node-bg"/>
+                  <text x="483" y="48" text-anchor="middle" class="diag-text-title">JNA Native Interop</text>
+                  <text x="483" y="66" text-anchor="middle" class="diag-text-accent">user32.dll SendInput</text>
+                  <text x="483" y="82" text-anchor="middle" class="diag-text-sub">Unicode Virtual Keys</text>
+                  <text x="483" y="99" text-anchor="middle" class="diag-text-sub">Direct OS Message Pump</text>
+
+                  <path d="M561 67 H603" class="diag-arrow" marker-end="url(#arrow-teal1)"/>
+                  <text x="582" y="60" text-anchor="middle" class="diag-wire-label">Kernel</text>
+
+                  <rect x="605" y="20" width="127" height="95" rx="8" class="diag-node-bg"/>
+                  <text x="668" y="48" text-anchor="middle" class="diag-text-title">Windows Host</text>
+                  <text x="668" y="66" text-anchor="middle" class="diag-text-sub">OS Input Injection</text>
+                  <text x="668" y="82" text-anchor="middle" class="diag-text-sub">JPEG Screen Stream</text>
+                  <text x="668" y="99" text-anchor="middle" class="diag-text-accent">Zero JRE Lag</text>
+                </svg>
+              </div>
+
               <div class="case-study-grid">
                 <div class="case-study-block">
                   <h4 class="case-study-block-title">01 / Backpressure &amp; Bounded Queues</h4>
@@ -680,6 +742,55 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                 <span>ENGINEERING DEEP DIVE &bull; HCP CRM AI WORKFLOW</span>
               </div>
+
+              <!-- Verified Architecture & Agentic Blueprint -->
+              <div class="architecture-diagram-container">
+                <div class="diagram-header">
+                  <span class="diagram-tag">SYSTEM BLUEPRINT &bull; AGENTIC PIPELINE &amp; TOOL DISPATCH</span>
+                  <span class="diagram-legend">LangGraph &bull; 15s to &lt;50ms Latency Slashing</span>
+                </div>
+                <svg class="architecture-svg" viewBox="0 0 740 135" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HCP CRM Agentic StateGraph Pipeline">
+                  <defs>
+                    <marker id="arrow-teal2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--accent-base)"/>
+                    </marker>
+                  </defs>
+                  <rect x="8" y="20" width="130" height="95" rx="8" class="diag-node-bg"/>
+                  <text x="73" y="48" text-anchor="middle" class="diag-text-title">Field Rep Input</text>
+                  <text x="73" y="66" text-anchor="middle" class="diag-text-sub">Conversational Dialog</text>
+                  <text x="73" y="82" text-anchor="middle" class="diag-text-sub">Multi-Turn Stream</text>
+                  <text x="73" y="99" text-anchor="middle" class="diag-text-accent">React / Redux UI</text>
+
+                  <path d="M138 67 H180" class="diag-arrow" marker-end="url(#arrow-teal2)"/>
+                  <text x="159" y="60" text-anchor="middle" class="diag-wire-label">FastAPI</text>
+
+                  <rect x="182" y="10" width="180" height="115" rx="8" class="diag-node-bg"/>
+                  <text x="272" y="34" text-anchor="middle" class="diag-text-title">LangGraph StateGraph</text>
+                  <text x="272" y="52" text-anchor="middle" class="diag-text-accent">Context Window Pruner</text>
+                  <text x="272" y="70" text-anchor="middle" class="diag-text-sub">Dynamic Tool Binding</text>
+                  <text x="272" y="88" text-anchor="middle" class="diag-text-sub">Cached Registry Lookups</text>
+                  <text x="272" y="106" text-anchor="middle" class="diag-text-sub">Pydantic Schema Guard</text>
+
+                  <path d="M362 67 H404" class="diag-arrow" marker-end="url(#arrow-teal2)"/>
+                  <text x="383" y="60" text-anchor="middle" class="diag-wire-label">&lt;50ms</text>
+
+                  <rect x="406" y="20" width="155" height="95" rx="8" class="diag-node-bg"/>
+                  <text x="483" y="48" text-anchor="middle" class="diag-text-title">Groq / Llama Core</text>
+                  <text x="483" y="66" text-anchor="middle" class="diag-text-accent">Slashing: 15s &rarr; &lt;50ms</text>
+                  <text x="483" y="82" text-anchor="middle" class="diag-text-sub">Token Rate-Limit Guard</text>
+                  <text x="483" y="99" text-anchor="middle" class="diag-text-sub">Entity Extraction Node</text>
+
+                  <path d="M561 67 H603" class="diag-arrow" marker-end="url(#arrow-teal2)"/>
+                  <text x="582" y="60" text-anchor="middle" class="diag-wire-label">ACID</text>
+
+                  <rect x="605" y="20" width="127" height="95" rx="8" class="diag-node-bg"/>
+                  <text x="668" y="48" text-anchor="middle" class="diag-text-title">PostgreSQL Store</text>
+                  <text x="668" y="66" text-anchor="middle" class="diag-text-sub">Relational Schema</text>
+                  <text x="668" y="82" text-anchor="middle" class="diag-text-sub">Audit History Logs</text>
+                  <text x="668" y="99" text-anchor="middle" class="diag-text-accent">Docker Compose</text>
+                </svg>
+              </div>
+
               <div class="case-study-grid">
                 <div class="case-study-block">
                   <h4 class="case-study-block-title">01 / StateGraph Agent Architecture</h4>
@@ -783,6 +894,55 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                 <span>ENGINEERING DEEP DIVE &bull; ENTERPRISE RENTAL ENGINE</span>
               </div>
+
+              <!-- Verified Architecture & Layered Blueprint -->
+              <div class="architecture-diagram-container">
+                <div class="diagram-header">
+                  <span class="diagram-tag">SYSTEM BLUEPRINT &bull; LAYERED ENTERPRISE ARCHITECTURE</span>
+                  <span class="diagram-legend">Spring Boot 3 &bull; Stateless JWT &amp; RBAC</span>
+                </div>
+                <svg class="architecture-svg" viewBox="0 0 740 135" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enterprise Rental Management Layered Architecture">
+                  <defs>
+                    <marker id="arrow-teal3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--accent-base)"/>
+                    </marker>
+                  </defs>
+                  <rect x="8" y="20" width="130" height="95" rx="8" class="diag-node-bg"/>
+                  <text x="73" y="48" text-anchor="middle" class="diag-text-title">React / TS Client</text>
+                  <text x="73" y="66" text-anchor="middle" class="diag-text-sub">Zustand State Store</text>
+                  <text x="73" y="82" text-anchor="middle" class="diag-text-sub">Swagger/OpenAPI Spec</text>
+                  <text x="73" y="99" text-anchor="middle" class="diag-text-accent">Type-Safe Client</text>
+
+                  <path d="M138 67 H180" class="diag-arrow" marker-end="url(#arrow-teal3)"/>
+                  <text x="159" y="60" text-anchor="middle" class="diag-wire-label">Bearer</text>
+
+                  <rect x="182" y="20" width="160" height="95" rx="8" class="diag-node-bg"/>
+                  <text x="262" y="48" text-anchor="middle" class="diag-text-title">Spring Security 6</text>
+                  <text x="262" y="66" text-anchor="middle" class="diag-text-accent">Stateless JWT Filter</text>
+                  <text x="262" y="82" text-anchor="middle" class="diag-text-sub">RBAC: Tenant / Landlord</text>
+                  <text x="262" y="99" text-anchor="middle" class="diag-text-sub">Centralized Exceptions</text>
+
+                  <path d="M342 67 H384" class="diag-arrow" marker-end="url(#arrow-teal3)"/>
+                  <text x="363" y="60" text-anchor="middle" class="diag-wire-label">Layered</text>
+
+                  <rect x="386" y="10" width="180" height="115" rx="8" class="diag-node-bg"/>
+                  <text x="476" y="34" text-anchor="middle" class="diag-text-title">Layered Services Engine</text>
+                  <text x="476" y="52" text-anchor="middle" class="diag-text-accent">Controller &rarr; Service &rarr; Repo</text>
+                  <text x="476" y="70" text-anchor="middle" class="diag-text-sub">@Transactional Boundaries</text>
+                  <text x="476" y="88" text-anchor="middle" class="diag-text-sub">@Scheduled Lease Expiry</text>
+                  <text x="476" y="106" text-anchor="middle" class="diag-text-sub">Automated Event Queues</text>
+
+                  <path d="M566 67 H608" class="diag-arrow" marker-end="url(#arrow-teal3)"/>
+                  <text x="587" y="60" text-anchor="middle" class="diag-wire-label">JPA</text>
+
+                  <rect x="610" y="20" width="122" height="95" rx="8" class="diag-node-bg"/>
+                  <text x="671" y="48" text-anchor="middle" class="diag-text-title">MySQL 8 DB</text>
+                  <text x="671" y="66" text-anchor="middle" class="diag-text-sub">Relational Entities</text>
+                  <text x="671" y="82" text-anchor="middle" class="diag-text-sub">Database Tuning</text>
+                  <text x="671" y="99" text-anchor="middle" class="diag-text-accent">Audit Columns</text>
+                </svg>
+              </div>
+
               <div class="case-study-grid">
                 <div class="case-study-block">
                   <h4 class="case-study-block-title">01 / Layered Architectural Separation</h4>
@@ -1186,6 +1346,6 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <!-- JavaScript Application Entry -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
