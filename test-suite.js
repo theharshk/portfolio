@@ -391,6 +391,53 @@ async function runTests() {
       detail: `hero-canvas display: ${reducedMotionCheck ? 'none (PASS)' : 'visible (FAIL)'}`
     });
 
+    // TEST 10: Content Corrections Verification
+    console.log('\n--- Verifying Content Corrections (Tekathon, Rental WIP, Event Easy) ---');
+    const contentCorrections = await evaluate(`(() => {
+      // 1. Tekathon attribution
+      const achievementsSec = document.getElementById('achievements');
+      const tekathonText = achievementsSec ? achievementsSec.innerText : '';
+      const tekathonHasToursAndTravels = tekathonText.includes('Tours and Travels Project') && tekathonText.includes('Tekathon 2.0');
+      
+      // 2. Rental Management status badges
+      const rentalCard = document.getElementById('project-rental-mgmt');
+      const wipBadge = rentalCard ? rentalCard.querySelector('.badge-wip') : null;
+      const backendBadge = rentalCard ? rentalCard.querySelector('.badge-backend') : null;
+      const frontendBadge = rentalCard ? rentalCard.querySelector('.badge-frontend') : null;
+      const rentalBadgesValid = !!(
+        wipBadge && wipBadge.textContent.includes('Work in Progress') &&
+        backendBadge && backendBadge.textContent.includes('Backend: Testing & Validation') &&
+        frontendBadge && frontendBadge.textContent.includes('Frontend: In Progress')
+      );
+
+      // 3. Event Easy in Other Projects
+      const eventEasyCard = Array.from(document.querySelectorAll('.compact-project-card')).find(c => c.textContent.includes('Event Easy'));
+      const eventEasyRepo = eventEasyCard ? eventEasyCard.querySelector('a[href="https://github.com/theharshk/Event-Easy"]') : null;
+      const eventEasyValid = !!(eventEasyCard && eventEasyRepo);
+
+      return {
+        tekathonHasToursAndTravels,
+        rentalBadgesValid,
+        eventEasyValid
+      };
+    })()`);
+
+    results.push({
+      test: 'Tekathon 2.0 achievement is associated with Tours and Travels project',
+      passed: contentCorrections.tekathonHasToursAndTravels,
+      detail: `Attributed to Tours and Travels: ${contentCorrections.tekathonHasToursAndTravels}`
+    });
+    results.push({
+      test: 'Enterprise Rental Management System displays WIP, Backend Testing & Validation, and Frontend In Progress badges',
+      passed: contentCorrections.rentalBadgesValid,
+      detail: `All 3 status badges present: ${contentCorrections.rentalBadgesValid}`
+    });
+    results.push({
+      test: 'Event Easy is listed in Other Projects with valid repository link',
+      passed: contentCorrections.eventEasyValid,
+      detail: `Card & Repo found: ${contentCorrections.eventEasyValid}`
+    });
+
     // Print Final Results
     console.log('\n======================================================');
     console.log('              AUTOMATED TEST RESULTS                  ');

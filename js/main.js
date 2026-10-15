@@ -8,6 +8,9 @@
 (function () {
   'use strict';
 
+  // Consolidated handler reference
+  let updateCanvasRect = null;
+
   // -------------------------------------------------------------------------
   // 1. Theme Controller (Dark Charcoal default with Light Mode toggle)
   // -------------------------------------------------------------------------
@@ -306,15 +309,16 @@
     }
 
     let canvasRect = null;
-    function updateCanvasRect() {
-      if (canvas) {
+    updateCanvasRect = function () {
+      if (canvas && isCanvasVisible) {
         canvasRect = canvas.getBoundingClientRect();
       }
+    };
+    if (canvas) {
+      canvasRect = canvas.getBoundingClientRect();
     }
-    updateCanvasRect();
 
     window.addEventListener('resize', handleResize, { passive: true });
-    window.addEventListener('scroll', updateCanvasRect, { passive: true });
 
     window.addEventListener('mousemove', function (e) {
       if (!canvasRect) return;
@@ -481,23 +485,28 @@
   }
 
   // -------------------------------------------------------------------------
-  // 9. Scroll-Progress Indicator
+  // 9. Consolidated Scroll Handler (Scroll Progress & Canvas Bounds)
   // -------------------------------------------------------------------------
   const scrollProgressEl = document.getElementById('scroll-progress');
-  if (scrollProgressEl) {
-    let isProgressTicking = false;
-    window.addEventListener('scroll', function () {
-      if (!isProgressTicking) {
-        window.requestAnimationFrame(function () {
+  let isScrollTicking = false;
+  window.addEventListener('scroll', function () {
+    if (!isScrollTicking) {
+      window.requestAnimationFrame(function () {
+        // Update scroll-progress indicator
+        if (scrollProgressEl) {
           const docHeight = document.documentElement.scrollHeight - window.innerHeight;
           const scrolled = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
           scrollProgressEl.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
-          isProgressTicking = false;
-        });
-        isProgressTicking = true;
-      }
-    }, { passive: true });
-  }
+        }
+        // Update canvas bounding box if hero canvas is active and visible
+        if (typeof updateCanvasRect === 'function') {
+          updateCanvasRect();
+        }
+        isScrollTicking = false;
+      });
+      isScrollTicking = true;
+    }
+  }, { passive: true });
 
   // -------------------------------------------------------------------------
   // 10. Progressive Section & Card Reveal (Respects prefers-reduced-motion)

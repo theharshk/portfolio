@@ -827,11 +827,16 @@
             <div class="project-inner">
               <div class="project-meta-row">
                 <span class="project-category-badge">Layered Architecture &amp; Enterprise Spring</span>
+                <div class="project-status-group">
+                  <span class="project-status-badge badge-wip">Work in Progress</span>
+                  <span class="project-status-badge badge-backend">Backend: Testing &amp; Validation</span>
+                  <span class="project-status-badge badge-frontend">Frontend: In Progress</span>
+                </div>
               </div>
 
               <h3 class="project-title">Enterprise Rental Management System</h3>
               <p class="project-purpose">
-                A <strong>full-stack rental property management system</strong> implementing a clean layered enterprise architecture for properties, leases, automated payment tracking, maintenance requests, and event notifications.
+                A <strong>rental property management application</strong> implementing a clean layered enterprise Spring Boot backend with a React and TypeScript frontend currently in development. Designed to streamline property listings, lease agreements, automated payment tracking, maintenance tickets, and event notifications.
               </p>
 
               <div class="project-highlights-list">
@@ -857,7 +862,11 @@
                 </div>
                 <div class="project-highlight-item">
                   <span class="project-highlight-bullet">&bull;</span>
-                  <span>Type-safe React and TypeScript frontend with Zustand state management and OpenAPI docs.</span>
+                  <span>Unit testing with JUnit 5 &amp; Mockito verifying authentication and service logic.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span><strong>Frontend in progress:</strong> React and TypeScript interface under active construction, synchronized with OpenAPI specs.</span>
                 </div>
               </div>
 
@@ -963,9 +972,9 @@
                   </p>
                 </div>
                 <div class="case-study-block">
-                  <h4 class="case-study-block-title">04 / Frontend Integration</h4>
+                  <h4 class="case-study-block-title">04 / Frontend In Progress &amp; OpenAPI Spec</h4>
                   <p class="case-study-block-content">
-                    Coupled with a type-safe React + TypeScript interface powered by <strong>Zustand</strong> for lightweight reactive state management. REST endpoints are documented and synchronized through OpenAPI / Swagger specifications.
+                    Front-end development is actively in progress with React and TypeScript, incorporating Zustand for state management. REST endpoints and data contracts are formalized through OpenAPI / Swagger specifications to enable clean client synchronization.
                   </p>
                 </div>
               </div>
@@ -979,31 +988,59 @@
              ------------------------------------------------------------------- -->
         <div class="other-projects-section">
           <h3 class="other-projects-title">Other Projects</h3>
-          <div class="compact-project-card">
-            <div class="compact-project-header">
-              <div>
-                <h4 class="compact-project-name">Real-Time AI Chat App</h4>
-                <p class="compact-project-desc">
-                  A basic real-time chat application with Node.js, Socket.IO, and Gemini API replies.
-                </p>
+          <div class="other-projects-grid">
+
+            <div class="compact-project-card">
+              <div class="compact-project-header">
+                <div>
+                  <h4 class="compact-project-name">Event Easy</h4>
+                  <p class="compact-project-desc">
+                    A collaborative group event planning platform enabling democratic consensus: participants vote on event decisions and cost proposals to finalize plans and budgets transparently.
+                  </p>
+                </div>
+                <div class="compact-project-links">
+                  <a href="https://github.com/theharshk/Event-Easy" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>Repository</span>
+                  </a>
+                </div>
               </div>
-              <div class="compact-project-links">
-                <a href="https://github.com/theharshk/chat-app" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  <span>Frontend Repo</span>
-                </a>
-                <a href="https://github.com/theharshk/chatapp-backend" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  <span>Backend Repo</span>
-                </a>
+              <div class="project-tech-stack">
+                <span class="skill-chip">React</span>
+                <span class="skill-chip">Node.js</span>
+                <span class="skill-chip">Express</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">Google OAuth</span>
               </div>
             </div>
-            <div class="project-tech-stack">
-              <span class="skill-chip">Node.js</span>
-              <span class="skill-chip">Socket.IO</span>
-              <span class="skill-chip">Gemini API</span>
-              <span class="skill-chip">WebSockets</span>
+
+            <div class="compact-project-card">
+              <div class="compact-project-header">
+                <div>
+                  <h4 class="compact-project-name">Real-Time AI Chat App</h4>
+                  <p class="compact-project-desc">
+                    A basic real-time chat application with Node.js, Socket.IO, and Gemini API replies.
+                  </p>
+                </div>
+                <div class="compact-project-links">
+                  <a href="https://github.com/theharshk/chat-app" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>Frontend Repo</span>
+                  </a>
+                  <a href="https://github.com/theharshk/chatapp-backend" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>Backend Repo</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-tech-stack">
+                <span class="skill-chip">Node.js</span>
+                <span class="skill-chip">Socket.IO</span>
+                <span class="skill-chip">Gemini API</span>
+                <span class="skill-chip">WebSockets</span>
+              </div>
             </div>
+
           </div>
         </div>
 
@@ -1185,9 +1222,9 @@
           <div class="achievement-card">
             <span class="achievement-type-badge">Competition Victory</span>
             <h3 class="achievement-title">First Place Winner &mdash; Tekathon 2.0</h3>
-            <p class="achievement-issuer">Chandigarh University</p>
+            <p class="achievement-issuer">Chandigarh University &bull; Tours and Travels Project</p>
             <p class="achievement-detail">
-              Awarded 1st Place in the <strong>System Design and Implementation Category</strong> for architecting and deploying a resilient, high-performance technical solution under competitive hackathon constraints.
+              Awarded 1st Place in the <strong>System Design and Implementation Category</strong> at Tekathon 2.0 for the Tours and Travels project, architecting and deploying a resilient, high-performance solution under competitive hackathon constraints.
             </p>
           </div>
 

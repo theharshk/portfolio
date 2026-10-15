@@ -61,7 +61,6 @@
 
   /* Layout */
   --max-width: 1200px;
-  --max-width-narrow: 860px;
   --header-height: 4.5rem;
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -253,10 +252,6 @@ textarea:focus-visible {
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.container-narrow {
-  max-width: var(--max-width-narrow);
 }
 
 .section {
@@ -1119,6 +1114,43 @@ textarea:focus-visible {
   background-color: #38bdf8;
 }
 
+.project-status-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-status-badge.badge-wip {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.project-status-badge.badge-wip::before {
+  background-color: #f59e0b;
+}
+
+.project-status-badge.badge-backend {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.project-status-badge.badge-backend::before {
+  background-color: #10b981;
+}
+
+.project-status-badge.badge-frontend {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.project-status-badge.badge-frontend::before {
+  background-color: #38bdf8;
+}
+
 .project-title {
   font-size: clamp(1.35rem, 2.5vw, 1.75rem);
   font-weight: 700;
@@ -1404,6 +1436,12 @@ textarea:focus-visible {
   max-width: 140px;
   height: 1px;
   background: var(--border-subtle);
+}
+
+.other-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
 }
 
 .compact-project-card {
