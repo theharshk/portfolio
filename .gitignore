@@ -1,0 +1,42 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Editor & IDE Directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js & Package Manager Artifacts (when running local test tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test, Audit & Coverage Artifacts
+lighthouse-report*
+*.report.json
+*.report.html
+.lighthouseci/
+coverage/
+.nyc_output/
+
+# Local Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Temporary Scratch Files & Generated Screenshots
+scratch/
+*.tmp
+*.log
+hero-*.png
+baseline-*.png
