@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="kh-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="kh-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Container -->
+  <rect width="64" height="64" rx="16" fill="url(#kh-bg)"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="#14b8a6" stroke-width="2" stroke-opacity="0.4"/>
+  
+  <!-- Subtle System Grid Lines -->
+  <path d="M4 32 H60 M32 4 V60" stroke="#14b8a6" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="2,4"/>
+  
+  <!-- Monogram KH -->
+  <g fill="none" stroke="url(#kh-teal)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Letter K -->
+    <path d="M19 18 V46"/>
+    <path d="M30 20 L19.5 32 L31 46"/>
+    <!-- Letter H -->
+    <path d="M37 18 V46"/>
+    <path d="M49 18 V46"/>
+    <path d="M37 32 H49"/>
+  </g>
+  
+  <!-- Active Tech Node Dot -->
+  <circle cx="51" cy="19" r="2.5" fill="#2dd4bf"/>
+</svg>

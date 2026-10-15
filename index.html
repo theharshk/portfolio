@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kumar Harsh — Software Engineer | Systems, Applications &amp; AI</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Personal portfolio of Kumar Harsh — Software Engineer building Java/Spring Boot backend systems, real-time applications, and AI agent workflows.">
+  <meta name="keywords" content="Kumar Harsh, Software Engineer, Backend Engineer, Java, Spring Boot, LangGraph, Concurrency, Systems Architecture, Full-Stack, Python">
+  <meta name="author" content="Kumar Harsh">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kumar Harsh — Software Engineer | Systems, Applications &amp; AI">
+  <meta property="og:description" content="Computer Science graduate building Java backend systems, real-time applications, and AI-powered services. Concurrency, clean architecture, and agentic workflows.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="assets/favicon.svg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kumar Harsh — Software Engineer">
+  <meta name="twitter:description" content="Software Engineer building backend systems, full-stack applications, and AI-powered software.">
+  <meta name="twitter:image" content="assets/favicon.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Accessible Skip Navigation -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- =========================================================================
+       Site Header & Sticky Navigation
+       ========================================================================= -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-code" aria-hidden="true">&lt;</span>
+        <span class="brand-name">Kumar Harsh</span>
+        <span class="brand-code" aria-hidden="true">/&gt;</span>
+        <span class="brand-badge">SE</span>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav id="nav-menu" class="nav-menu" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#ai-ml" class="nav-link">AI &amp; ML</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Dark / Light Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle color theme" title="Toggle color theme">
+          <!-- Moon Icon (Dark Mode active) -->
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon (Light Mode active) -->
+          <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Mobile Navigation Menu Toggle -->
+        <button id="nav-toggle" class="nav-toggle-btn" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Content Area
+       ========================================================================= -->
+  <main id="main">
+
+    <!-- -----------------------------------------------------------------------
+         Hero Section
+         ----------------------------------------------------------------------- -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-container">
+        
+        <!-- Discreet Open to Roles Indicator -->
+        <div class="status-badge">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">Open to Software Engineer roles</span>
+        </div>
+
+        <h1 id="hero-heading" class="hero-title">
+          Software Engineer building systems, applications &amp; AI.
+        </h1>
+
+        <div class="hero-specialization">
+          <span>Backend Engineering</span>
+          <span class="spec-divider" aria-hidden="true">&bull;</span>
+          <span>Full-Stack Development</span>
+          <span class="spec-divider" aria-hidden="true">&bull;</span>
+          <span>AI Engineering</span>
+        </div>
+
+        <!-- Subtle Rotating Line -->
+        <div class="hero-rotating-wrapper">
+          <span class="rotating-prefix">Engineering:</span>
+          <span id="rotating-text" class="rotating-text" aria-live="polite">backend systems</span>
+        </div>
+
+        <p class="hero-intro">
+          Computer Science graduate building Java backend systems, real-time applications, and AI-powered services. Interested in clean architecture, concurrency, developer tooling, and intelligent applications.
+        </p>
+
+        <!-- Action CTAs -->
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Projects</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17l10-10M17 7v10M7 7h10"></path></svg>
+          </a>
+          
+          <a href="https://github.com/theharshk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <!-- GitHub SVG -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span>GitHub</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/harshkumar731/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <!-- LinkedIn SVG -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="#contact" class="btn btn-ghost">
+            <!-- Mail SVG -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <!-- Technical Engineering Metrics Strip -->
+        <div class="hero-tech-strip">
+          <div class="tech-strip-item">
+            <span class="tech-strip-label">Core Runtime</span>
+            <span class="tech-strip-value">Java 17 &bull; Spring Boot 3</span>
+          </div>
+          <div class="tech-strip-item">
+            <span class="tech-strip-label">Agentic AI</span>
+            <span class="tech-strip-value">LangGraph &bull; FastAPI</span>
+          </div>
+          <div class="tech-strip-item">
+            <span class="tech-strip-label">Architecture</span>
+            <span class="tech-strip-value">Concurrency &bull; Layered Systems</span>
+          </div>
+          <div class="tech-strip-item">
+            <span class="tech-strip-label">Persistence</span>
+            <span class="tech-strip-value">PostgreSQL &bull; MySQL</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         About Section
+         ----------------------------------------------------------------------- -->
+    <section id="about" class="section section-about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading" class="section-title">
+          <span class="section-num">01.</span> About
+        </h2>
+
+        <div class="about-grid">
+          <div class="about-narrative">
+            <p class="about-foundation-text">
+              Computer Science graduate focused on building Java/Spring Boot backends, real-time systems, and AI-powered applications. Worked across four production microservice platforms at Arya.ag, investigating production issues and automating backend workflows. Built projects involving concurrent processing, bounded-queue backpressure, authentication, role-based authorization, and AI agent workflows. Also work across web technologies to build user-facing interfaces and complete applications.
+            </p>
+
+            <div class="engineering-pillars-grid">
+              <div class="pillar-card">
+                <div class="pillar-header">
+                  <span class="pillar-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"></rect><rect x="2" y="14" width="20" height="8" rx="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                  </span>
+                  <h3 class="pillar-title">Backend &amp; API Systems</h3>
+                </div>
+                <p class="pillar-desc">
+                  Building structured Java 17 and Spring Boot microservices, RESTful interfaces, Spring Security with stateless JWT authorization, and layered transactional persistence.
+                </p>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-header">
+                  <span class="pillar-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                  </span>
+                  <h3 class="pillar-title">Concurrency &amp; Real-Time</h3>
+                </div>
+                <p class="pillar-desc">
+                  Designing multi-threaded systems with bounded queues and acknowledgement-based backpressure to stream screen data and manage WebSocket state without memory accumulation.
+                </p>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-header">
+                  <span class="pillar-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                  </span>
+                  <h3 class="pillar-title">AI Application Workflows</h3>
+                </div>
+                <p class="pillar-desc">
+                  Orchestrating agentic workflows using LangGraph and LangChain, implementing dynamic tool binding, context window pruning, and structured entity extraction.
+                </p>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-header">
+                  <span class="pillar-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                  </span>
+                  <h3 class="pillar-title">Production Engineering</h3>
+                </div>
+                <p class="pillar-desc">
+                  Troubleshooting enterprise production bottlenecks with centralized log diagnostics, verifying transactional consistency across SQL databases, and building regression automation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Skills Section
+         ----------------------------------------------------------------------- -->
+    <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading" class="section-title">
+          <span class="section-num">02.</span> Technical Skills
+        </h2>
+        <p class="section-subtitle">
+          Core technologies, frameworks, and engineering foundations verified through production systems and project repositories.
+        </p>
+
+        <div class="skills-container">
+
+          <!-- 1. Languages -->
+          <div class="skill-group-card">
+            <div class="skill-group-header">
+              <h3 class="skill-group-title">Languages</h3>
+              <span class="skill-group-tag">Syntax &amp; Runtime</span>
+            </div>
+            <div class="skill-chip-list">
+              <span class="skill-chip">Java 8</span>
+              <span class="skill-chip">Java 17</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">TypeScript</span>
+              <span class="skill-chip">C++</span>
+              <span class="skill-chip">SQL</span>
+            </div>
+          </div>
+
+          <!-- 2. Backend Engineering -->
+          <div class="skill-group-card">
+            <div class="skill-group-header">
+              <h3 class="skill-group-title">Backend Engineering</h3>
+              <span class="skill-group-tag">APIs &amp; Microservices</span>
+            </div>
+            <div class="skill-chip-list">
+              <span class="skill-chip">Spring Boot</span>
+              <span class="skill-chip">Core Java</span>
+              <span class="skill-chip">OOP</span>
+              <span class="skill-chip">REST APIs</span>
+              <span class="skill-chip">Microservices Architecture</span>
+              <span class="skill-chip">JWT</span>
+              <span class="skill-chip">Role-Based Access Control</span>
+              <span class="skill-chip">Swagger/OpenAPI</span>
+              <span class="skill-chip">Node.js</span>
+            </div>
+          </div>
+
+          <!-- 3. Databases -->
+          <div class="skill-group-card">
+            <div class="skill-group-header">
+              <h3 class="skill-group-title">Databases</h3>
+              <span class="skill-group-tag">Persistence &amp; Tuning</span>
+            </div>
+            <div class="skill-chip-list">
+              <span class="skill-chip">MySQL</span>
+              <span class="skill-chip">PostgreSQL</span>
+              <span class="skill-chip">SQL Server</span>
+              <span class="skill-chip">MongoDB</span>
+              <span class="skill-chip">Transaction Management</span>
+              <span class="skill-chip">Database Tuning</span>
+            </div>
+          </div>
+
+          <!-- 4. AI Engineering -->
+          <div class="skill-group-card">
+            <div class="skill-group-header">
+              <h3 class="skill-group-title">AI Engineering</h3>
+              <span class="skill-group-tag">Agents &amp; Tool Binding</span>
+            </div>
+            <div class="skill-chip-list">
+              <span class="skill-chip">LangChain</span>
+              <span class="skill-chip">LangGraph</span>
+              <span class="skill-chip">FastAPI</span>
+              <span class="skill-chip">Gemini API</span>
+              <span class="skill-chip">Groq / Llama</span>
+              <span class="skill-chip">AI Agent Workflows</span>
+              <span class="skill-chip">Prompt &amp; Context Engineering</span>
+              <span class="skill-chip">Dynamic Tool Binding</span>
+            </div>
+          </div>
+
+          <!-- 5. Full-Stack Development -->
+          <div class="skill-group-card">
+            <div class="skill-group-header">
+              <h3 class="skill-group-title">Full-Stack Development</h3>
+              <span class="skill-group-tag">Frontend &amp; Real-Time</span>
+            </div>
+            <div class="skill-chip-list">
+              <span class="skill-chip">React</span>
+              <span class="skill-chip">Redux</span>
+              <span class="skill-chip">Zustand</span>
+              <span class="skill-chip">Vite</span>
+              <span class="skill-chip">HTML5</span>
+              <span class="skill-chip">CSS3</span>
+              <span class="skill-chip">WebSockets</span>
+              <span class="skill-chip">Socket.IO</span>
+            </div>
+          </div>
+
+          <!-- 6. Infrastructure -->
+          <div class="skill-group-card">
+            <div class="skill-group-header">
+              <h3 class="skill-group-title">Infrastructure</h3>
+              <span class="skill-group-tag">DevOps &amp; Linux</span>
+            </div>
+            <div class="skill-chip-list">
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">Docker Compose</span>
+              <span class="skill-chip">Nginx</span>
+              <span class="skill-chip">Git</span>
+              <span class="skill-chip">GitHub Actions</span>
+              <span class="skill-chip">CI/CD</span>
+              <span class="skill-chip">Linux Shell</span>
+            </div>
+          </div>
+
+          <!-- 7. Computer Science -->
+          <div class="skill-group-card">
+            <div class="skill-group-header">
+              <h3 class="skill-group-title">Computer Science</h3>
+              <span class="skill-group-tag">Core Fundamentals</span>
+            </div>
+            <div class="skill-chip-list">
+              <span class="skill-chip">Data Structures &amp; Algorithms</span>
+              <span class="skill-chip">Big-O Complexity</span>
+              <span class="skill-chip">Operating Systems</span>
+              <span class="skill-chip">DBMS</span>
+              <span class="skill-chip">Computer Networks</span>
+            </div>
+          </div>
+
+          <!-- 8. Engineering Tools (Compact Auxiliary Category) -->
+          <div class="skill-group-card compact-group">
+            <div class="skill-group-header">
+              <h3 class="skill-group-title">Engineering Tools</h3>
+              <span class="skill-group-tag">Testing &amp; QA Tooling</span>
+            </div>
+            <div class="skill-chip-list">
+              <span class="skill-chip">JUnit 5</span>
+              <span class="skill-chip">Mockito</span>
+              <span class="skill-chip">TestNG</span>
+              <span class="skill-chip">Postman</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Experience Section
+         ----------------------------------------------------------------------- -->
+    <section id="experience" class="section section-experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <h2 id="experience-heading" class="section-title">
+          <span class="section-num">03.</span> Experience
+        </h2>
+        <p class="section-subtitle">
+          Hands-on software and backend engineering across enterprise production microservice ecosystems.
+        </p>
+
+        <div class="experience-timeline">
+          <article class="exp-card">
+            <header class="exp-header">
+              <div>
+                <h3 class="exp-role-title">
+                  <span>SDET Intern</span>
+                  <span class="exp-company">@ Arya.ag</span>
+                  <span class="exp-context-badge">Production Engineering</span>
+                </h3>
+                <p class="exp-summary-tagline">
+                  Enterprise Grain Commerce &amp; Agritech Post-Harvest Microservice Platforms
+                </p>
+              </div>
+              <time class="exp-dates">June 2025 &ndash; March 2026</time>
+            </header>
+
+            <ul class="exp-bullets">
+              <li class="exp-bullet">
+                <span class="exp-bullet-marker">&bull;</span>
+                <div>
+                  Worked across enterprise <strong>Java/Spring Boot microservices</strong> in four production platforms: Warehouse (WMS), Customer (CAMS), Notification (NOMS), and Document Management (DOMS).
+                </div>
+              </li>
+              <li class="exp-bullet">
+                <span class="exp-bullet-marker">&bull;</span>
+                <div>
+                  Investigated <strong>production bottlenecks</strong> using centralized log diagnostics to trace microservice communication failures and anomalous state transitions.
+                </div>
+              </li>
+              <li class="exp-bullet">
+                <span class="exp-bullet-marker">&bull;</span>
+                <div>
+                  Helped <strong>reduce hotfix cycle times</strong> alongside the core development team by diagnosing root causes in backend service workflows.
+                </div>
+              </li>
+              <li class="exp-bullet">
+                <span class="exp-bullet-marker">&bull;</span>
+                <div>
+                  Audited <strong>SQL data and API payloads</strong> for transactional consistency, referential integrity, and edge-case handling across distributed databases.
+                </div>
+              </li>
+              <li class="exp-bullet">
+                <span class="exp-bullet-marker">&bull;</span>
+                <div>
+                  Built <strong>TestNG automation suites</strong> covering critical execution paths, business-rule edge cases, and asynchronous event queues.
+                </div>
+              </li>
+              <li class="exp-bullet">
+                <span class="exp-bullet-marker">&bull;</span>
+                <div>
+                  Validated <strong>REST APIs</strong> and participated in daily Agile/Scrum sprint ceremonies and architectural syncs.
+                </div>
+              </li>
+            </ul>
+
+            <div class="exp-tech-chips">
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">Spring Boot</span>
+              <span class="skill-chip">Microservices</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">REST APIs</span>
+              <span class="skill-chip">Centralized Logging</span>
+              <span class="skill-chip">TestNG</span>
+              <span class="skill-chip">Agile / Scrum</span>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Projects Section
+         ----------------------------------------------------------------------- -->
+    <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading" class="section-title">
+          <span class="section-num">04.</span> Featured Projects
+        </h2>
+        <p class="section-subtitle">
+          Production-grade systems, concurrency backpressure models, agentic workflows, and layered architectures with full source code and technical case studies.
+        </p>
+
+        <div class="projects-grid">
+
+          <!-- =================================================================
+               Project A: Phone PC Hypnotiser
+               ================================================================= -->
+          <article class="project-card" id="project-phone-pc">
+            <div class="project-inner">
+              <div class="project-meta-row">
+                <span class="project-category-badge">Systems &amp; Concurrency</span>
+                <span class="project-status-badge">In active development</span>
+              </div>
+
+              <h3 class="project-title">Phone PC Hypnotiser</h3>
+              <p class="project-purpose">
+                A <strong>self-hosted remote controller</strong> that allows a mobile browser to control a Windows PC over local Wi-Fi with low-latency streaming and OS-level input emulation.
+              </p>
+
+              <div class="project-highlights-list">
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Full-duplex bidirectional communication over Spring Boot 3 WebSockets.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Multithreaded screen streaming with dedicated capture and encoding threads.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Bounded queues and acknowledgement-based backpressure to avoid frame lag.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Native Windows input emulation through JNA and Win32 <code>SendInput</code> API.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Unicode keyboard event handling, authentication, and security controls.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Automated test suites with JUnit 5 &amp; Mockito integrated into GitHub Actions CI.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="skill-chip">Java 17</span>
+                <span class="skill-chip">Spring Boot 3</span>
+                <span class="skill-chip">WebSockets</span>
+                <span class="skill-chip">JNA (Win32)</span>
+                <span class="skill-chip">JUnit 5</span>
+                <span class="skill-chip">Mockito</span>
+                <span class="skill-chip">GitHub Actions</span>
+              </div>
+
+              <div class="project-actions">
+                <div class="project-links">
+                  <a href="https://github.com/theharshk/phone-pc-hypnotiser" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>View Repository</span>
+                  </a>
+                </div>
+
+                <button type="button" class="case-study-toggle-btn" aria-expanded="false" aria-controls="case-study-hypnotiser">
+                  <span class="case-study-label">View Technical Case Study</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Expandable Case Study Deep Dive -->
+            <div id="case-study-hypnotiser" class="case-study-drawer" hidden>
+              <div class="case-study-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>ENGINEERING DEEP DIVE &bull; PHONE PC HYPNOTISER</span>
+              </div>
+              <div class="case-study-grid">
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">01 / Backpressure &amp; Bounded Queues</h4>
+                  <p class="case-study-block-content">
+                    Real-time desktop streaming over local Wi-Fi causes TCP buffer bloat when client decoders lag. The server implements a <strong>bounded blocking queue of capacity 1</strong> combined with an explicit client-side ACK handshake. If the mobile client has not acknowledged the previous frame, intermediate screen captures are dropped immediately, maintaining near-zero perceived latency.
+                  </p>
+                </div>
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">02 / Native Win32 SendInput via JNA</h4>
+                  <p class="case-study-block-content">
+                    Standard Java <code>java.awt.Robot</code> incurs JVM overhead and lacks native direct input injection for games and elevated windows. Using <strong>Java Native Access (JNA)</strong>, the backend binds directly to <code>user32.dll SendInput</code>, injecting absolute cursor movements, mouse clicks, and Unicode <code>KEYEVENTF_UNICODE</code> keystrokes directly into the Windows OS message pump.
+                  </p>
+                </div>
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">03 / Concurrency &amp; Thread Separation</h4>
+                  <p class="case-study-block-content">
+                    Screen frame capture, JPEG compression, and WebSocket outbound transmission are partitioned across isolated executor threads. Inbound mouse coordinate packets bypass image serialization queues entirely, ensuring sub-5ms touch responsiveness even under heavy graphic load.
+                  </p>
+                </div>
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">04 / Security &amp; Verification</h4>
+                  <p class="case-study-block-content">
+                    Implemented local subnet IP binding, pre-shared token handshakes for WebSocket connection initialization, and unit test coverage with <strong>JUnit 5 &amp; Mockito</strong> for packet serialization and client disconnect lifecycle handling.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- =================================================================
+               Project B: HCP CRM — AI-First Field Rep Logging System
+               ================================================================= -->
+          <article class="project-card" id="project-hcp-crm">
+            <div class="project-inner">
+              <div class="project-meta-row">
+                <span class="project-category-badge">AI Agent Workflows &amp; FastAPI</span>
+              </div>
+
+              <h3 class="project-title">HCP CRM — AI-First Field Rep Logging System</h3>
+              <p class="project-purpose">
+                An <strong>AI-powered CRM workflow</strong> that lets healthcare field representatives log doctor interactions through natural voice and conversation while structured relational records are automatically extracted and validated.
+              </p>
+
+              <div class="project-highlights-list">
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Agentic workflow orchestration built with LangGraph StateGraphs and LangChain.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Prompt and context engineering with dynamic tool binding for structured field capture.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Optimized tool execution latency from approximately 15 seconds to under 50 milliseconds.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Context window pruning and rate-limit handling for high-throughput Groq / Llama calls.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>PostgreSQL persistence for relational entities, call notes, and validated audits.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>React and Redux frontend containerized with Docker Compose and Nginx reverse proxy.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">FastAPI</span>
+                <span class="skill-chip">LangGraph</span>
+                <span class="skill-chip">LangChain</span>
+                <span class="skill-chip">Groq / Llama</span>
+                <span class="skill-chip">PostgreSQL</span>
+                <span class="skill-chip">React</span>
+                <span class="skill-chip">Redux</span>
+                <span class="skill-chip">Docker Compose</span>
+                <span class="skill-chip">Nginx</span>
+              </div>
+
+              <div class="project-actions">
+                <div class="project-links">
+                  <a href="https://github.com/theharshk/hcp-crm-ai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>View Repository</span>
+                  </a>
+                </div>
+
+                <button type="button" class="case-study-toggle-btn" aria-expanded="false" aria-controls="case-study-hcp-crm">
+                  <span class="case-study-label">View Technical Case Study</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Expandable Case Study Deep Dive -->
+            <div id="case-study-hcp-crm" class="case-study-drawer" hidden>
+              <div class="case-study-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>ENGINEERING DEEP DIVE &bull; HCP CRM AI WORKFLOW</span>
+              </div>
+              <div class="case-study-grid">
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">01 / StateGraph Agent Architecture</h4>
+                  <p class="case-study-block-content">
+                    Constructed a stateful cyclic graph using <strong>LangGraph</strong> that tracks conversational state, extracts clinical and discussion metadata into Pydantic models, and conditionally branches into verification or human confirmation nodes.
+                  </p>
+                </div>
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">02 / 15s to &lt;50ms Latency Slashing</h4>
+                  <p class="case-study-block-content">
+                    Initial logging tool execution required repeated LLM re-prompting and unindexed metadata validation, peaking at ~15 seconds. By decoupling field extraction into schema-bound local validation, in-memory caching of clinic registries, and single-pass tool invocation, <strong>tool execution latency dropped to under 50 milliseconds</strong>.
+                  </p>
+                </div>
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">03 / Context Pruning &amp; Rate Limiting</h4>
+                  <p class="case-study-block-content">
+                    Implemented dynamic conversation history trimming that maintains recent entity references and system instructions while truncating raw dialog history. This prevented token overflow and token-per-minute (TPM) throttling on Groq/Llama endpoints.
+                  </p>
+                </div>
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">04 / Persistence &amp; Containerization</h4>
+                  <p class="case-study-block-content">
+                    Mapped extracted records to relational PostgreSQL tables with ACID transaction boundaries. The entire stack (FastAPI backend, PostgreSQL db, React/Redux SPA, Nginx) is orchestrated via Docker Compose for reproducible local and cloud deployment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- =================================================================
+               Project C: Enterprise Rental Management System
+               ================================================================= -->
+          <article class="project-card" id="project-rental-mgmt">
+            <div class="project-inner">
+              <div class="project-meta-row">
+                <span class="project-category-badge">Layered Architecture &amp; Enterprise Spring</span>
+              </div>
+
+              <h3 class="project-title">Enterprise Rental Management System</h3>
+              <p class="project-purpose">
+                A <strong>full-stack rental property management system</strong> implementing a clean layered enterprise architecture for properties, leases, automated payment tracking, maintenance requests, and event notifications.
+              </p>
+
+              <div class="project-highlights-list">
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Rigorous layered backend architecture (Controller &rarr; Service &rarr; Repository &rarr; Entity).</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Spring Security 6 with stateless JWT authentication and Role-Based Access Control (RBAC).</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Centralized GlobalExceptionHandler with custom RFC-7807 compliant error schemas.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>JPA / Hibernate database persistence with auditing, soft-deletes, and indexing on MySQL.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Scheduled cron tasks for automated lease expiry detection and payment notice queues.</span>
+                </div>
+                <div class="project-highlight-item">
+                  <span class="project-highlight-bullet">&bull;</span>
+                  <span>Type-safe React and TypeScript frontend with Zustand state management and OpenAPI docs.</span>
+                </div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="skill-chip">Java 17</span>
+                <span class="skill-chip">Spring Boot 3</span>
+                <span class="skill-chip">MySQL</span>
+                <span class="skill-chip">JWT</span>
+                <span class="skill-chip">Swagger / OpenAPI</span>
+                <span class="skill-chip">Docker</span>
+                <span class="skill-chip">React</span>
+                <span class="skill-chip">TypeScript</span>
+                <span class="skill-chip">Zustand</span>
+              </div>
+
+              <div class="project-actions">
+                <div class="project-links">
+                  <a href="https://github.com/theharshk/Layered-Microservice-Architecture-Engine" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>View Repository</span>
+                  </a>
+                </div>
+
+                <button type="button" class="case-study-toggle-btn" aria-expanded="false" aria-controls="case-study-rental">
+                  <span class="case-study-label">View Technical Case Study</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Expandable Case Study Deep Dive -->
+            <div id="case-study-rental" class="case-study-drawer" hidden>
+              <div class="case-study-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>ENGINEERING DEEP DIVE &bull; ENTERPRISE RENTAL ENGINE</span>
+              </div>
+              <div class="case-study-grid">
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">01 / Layered Architectural Separation</h4>
+                  <p class="case-study-block-content">
+                    Designed strictly as a modular layered backend to prevent tight coupling. The presentation layer handles validation annotations and DTO mapping, business services enforce domain invariants and transaction boundaries (<code>@Transactional</code>), and the data access layer leverages Spring Data JPA repositories.
+                  </p>
+                </div>
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">02 / Stateless RBAC with JWT</h4>
+                  <p class="case-study-block-content">
+                    Engineered stateless token verification via an HTTP filter chain intercepting incoming Bearer tokens. Role hierarchies differentiate Tenant, Landlord, and Property Manager capabilities with method-level authorization (<code>@PreAuthorize</code>).
+                  </p>
+                </div>
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">03 / Scheduled Jobs &amp; Invariants</h4>
+                  <p class="case-study-block-content">
+                    Configured Spring <code>@Scheduled</code> cron execution to evaluate lease contracts approaching their end dates, automatically flag overdue rent statuses, and queue internal notification payloads.
+                  </p>
+                </div>
+                <div class="case-study-block">
+                  <h4 class="case-study-block-title">04 / Frontend Integration</h4>
+                  <p class="case-study-block-content">
+                    Coupled with a type-safe React + TypeScript interface powered by <strong>Zustand</strong> for lightweight reactive state management. REST endpoints are documented and synchronized through OpenAPI / Swagger specifications.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- -------------------------------------------------------------------
+             Other Projects (Compact Subsection)
+             ------------------------------------------------------------------- -->
+        <div class="other-projects-section">
+          <h3 class="other-projects-title">Other Projects</h3>
+          <div class="compact-project-card">
+            <div class="compact-project-header">
+              <div>
+                <h4 class="compact-project-name">Real-Time AI Chat App</h4>
+                <p class="compact-project-desc">
+                  A basic real-time chat application with Node.js, Socket.IO, and Gemini API replies.
+                </p>
+              </div>
+              <div class="compact-project-links">
+                <a href="https://github.com/theharshk/chat-app" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Frontend Repo</span>
+                </a>
+                <a href="https://github.com/theharshk/chatapp-backend" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Backend Repo</span>
+                </a>
+              </div>
+            </div>
+            <div class="project-tech-stack">
+              <span class="skill-chip">Node.js</span>
+              <span class="skill-chip">Socket.IO</span>
+              <span class="skill-chip">Gemini API</span>
+              <span class="skill-chip">WebSockets</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         AI & ML Section
+         ----------------------------------------------------------------------- -->
+    <section id="ai-ml" class="section section-ai-ml" aria-labelledby="ai-ml-heading">
+      <div class="container">
+        <h2 id="ai-ml-heading" class="section-title">
+          <span class="section-num">05.</span> AI &amp; Machine Learning
+        </h2>
+        <p class="section-subtitle">
+          Demonstrating current verified AI application engineering and maintaining a disciplined trajectory into machine learning systems.
+        </p>
+
+        <!-- Technical Boundary Notice -->
+        <div class="ai-ml-intro-banner">
+          <div class="ai-ml-banner-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </div>
+          <p class="ai-ml-banner-text">
+            <strong>Engineering Discipline:</strong> I distinguish <strong>AI Application Engineering</strong> (orchestrating agents, dynamic tool bindings, structured outputs, and optimizing API latency) from <strong>Machine Learning Model Training</strong>. Current production work focuses on robust agentic workflows, while research and active study build toward deep model training and fine-tuning pipelines.
+          </p>
+        </div>
+
+        <div class="ai-ml-grid">
+
+          <!-- Left Column: Verified AI Engineering Work -->
+          <div class="ai-ml-column">
+            <div class="ai-ml-col-header">
+              <span class="ai-ml-col-badge active-badge">VERIFIED PRODUCTION CAPABILITIES</span>
+              <h3 class="ai-ml-col-title">AI Application Engineering</h3>
+            </div>
+
+            <div class="ai-capabilities-list">
+              <div class="ai-capability-item">
+                <span class="ai-cap-bullet">01</span>
+                <div>
+                  <h4 class="ai-cap-title">LangGraph-Based Agentic Workflows</h4>
+                  <p class="ai-cap-desc">Modeling multi-turn conversations, state validation, and fallback mechanisms in cyclic graph structures.</p>
+                </div>
+              </div>
+
+              <div class="ai-capability-item">
+                <span class="ai-cap-bullet">02</span>
+                <div>
+                  <h4 class="ai-cap-title">LangChain Orchestration</h4>
+                  <p class="ai-cap-desc">Composing prompt chains, memory stores, and parser layers for predictable pipeline execution.</p>
+                </div>
+              </div>
+
+              <div class="ai-capability-item">
+                <span class="ai-cap-bullet">03</span>
+                <div>
+                  <h4 class="ai-cap-title">Prompt &amp; Context Engineering</h4>
+                  <p class="ai-cap-desc">System prompting, few-shot conditioning, role boundaries, and output constraint enforcement.</p>
+                </div>
+              </div>
+
+              <div class="ai-capability-item">
+                <span class="ai-cap-bullet">04</span>
+                <div>
+                  <h4 class="ai-cap-title">Dynamic Tool Binding</h4>
+                  <p class="ai-cap-desc">Connecting LLMs to real-time database queries and domain validation functions through typed function calls.</p>
+                </div>
+              </div>
+
+              <div class="ai-capability-item">
+                <span class="ai-cap-bullet">05</span>
+                <div>
+                  <h4 class="ai-cap-title">Structured Data Extraction</h4>
+                  <p class="ai-cap-desc">Extracting strict Pydantic and JSON schemas from unstructured text streams for relational persistence.</p>
+                </div>
+              </div>
+
+              <div class="ai-capability-item">
+                <span class="ai-cap-bullet">06</span>
+                <div>
+                  <h4 class="ai-cap-title">LLM Integration via Groq / Llama</h4>
+                  <p class="ai-cap-desc">High-throughput token streaming, managing API rate-limits, and robust retry backoff strategies.</p>
+                </div>
+              </div>
+
+              <div class="ai-capability-item">
+                <span class="ai-cap-bullet">07</span>
+                <div>
+                  <h4 class="ai-cap-title">Latency Optimization in Tooling</h4>
+                  <p class="ai-cap-desc">Slashing tool execution latency from ~15 seconds to under 50 milliseconds via cached registries and asynchronous dispatch.</p>
+                </div>
+              </div>
+
+              <div class="ai-capability-item">
+                <span class="ai-cap-bullet">08</span>
+                <div>
+                  <h4 class="ai-cap-title">API Integration &amp; Data Persistence</h4>
+                  <p class="ai-cap-desc">Bridging agentic outputs with FastAPI REST services and PostgreSQL database tables.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Machine Learning Growth & Active Focus Roadmap -->
+          <div class="ai-ml-column">
+            <div class="ai-ml-col-header">
+              <span class="ai-ml-col-badge roadmap-badge">GROWTH &amp; ACTIVE FOCUS</span>
+              <h3 class="ai-ml-col-title">Machine Learning Trajectory</h3>
+            </div>
+
+            <div class="ai-capabilities-list">
+              <div class="ai-capability-item roadmap-item">
+                <span class="ai-cap-bullet">&bull;</span>
+                <div>
+                  <h4 class="ai-cap-title">Dataset Preparation &amp; Preprocessing</h4>
+                  <p class="ai-cap-desc">Tokenization pipelines, synthetic data augmentation, feature cleaning, and balanced split strategies.</p>
+                </div>
+                <span class="roadmap-status-pill">Active Study</span>
+              </div>
+
+              <div class="ai-capability-item roadmap-item">
+                <span class="ai-cap-bullet">&bull;</span>
+                <div>
+                  <h4 class="ai-cap-title">Model Training &amp; Evaluation</h4>
+                  <p class="ai-cap-desc">Loss function optimization, convergence diagnostics, regularization, and benchmark scoring.</p>
+                </div>
+                <span class="roadmap-status-pill">Active Study</span>
+              </div>
+
+              <div class="ai-capability-item roadmap-item">
+                <span class="ai-cap-bullet">&bull;</span>
+                <div>
+                  <h4 class="ai-cap-title">Fine-Tuning Pretrained Models</h4>
+                  <p class="ai-cap-desc">Parameter-efficient fine-tuning (PEFT/LoRA) on domain-specific corpora for specialized classification.</p>
+                </div>
+                <span class="roadmap-status-pill">Roadmap</span>
+              </div>
+
+              <div class="ai-capability-item roadmap-item">
+                <span class="ai-cap-bullet">&bull;</span>
+                <div>
+                  <h4 class="ai-cap-title">Inference Optimization &amp; Deployment</h4>
+                  <p class="ai-cap-desc">Quantization (INT8/INT4), KV-cache optimization, and low-latency self-hosted serving containers.</p>
+                </div>
+                <span class="roadmap-status-pill">Roadmap</span>
+              </div>
+
+              <div class="ai-capability-item roadmap-item">
+                <span class="ai-cap-bullet">&bull;</span>
+                <div>
+                  <h4 class="ai-cap-title">ML Experiments &amp; Evaluation Metrics</h4>
+                  <p class="ai-cap-desc">Systematic tracking of precision, recall, F1-score, perplexity, and regression benchmarks across iterations.</p>
+                </div>
+                <span class="roadmap-status-pill">Roadmap</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Achievements Section
+         ----------------------------------------------------------------------- -->
+    <section id="achievements" class="section section-achievements" aria-labelledby="achievements-heading">
+      <div class="container">
+        <h2 id="achievements-heading" class="section-title">
+          <span class="section-num">06.</span> Achievements
+        </h2>
+        <p class="section-subtitle">
+          Hackathon victories, published research in peer-reviewed venues, and verified technical credentials.
+        </p>
+
+        <div class="achievements-grid">
+          
+          <!-- Tekathon 2.0 -->
+          <div class="achievement-card">
+            <span class="achievement-type-badge">Competition Victory</span>
+            <h3 class="achievement-title">First Place Winner &mdash; Tekathon 2.0</h3>
+            <p class="achievement-issuer">Chandigarh University</p>
+            <p class="achievement-detail">
+              Awarded 1st Place in the <strong>System Design and Implementation Category</strong> for architecting and deploying a resilient, high-performance technical solution under competitive hackathon constraints.
+            </p>
+          </div>
+
+          <!-- Peer-Reviewed Research -->
+          <div class="achievement-card">
+            <span class="achievement-type-badge">Peer-Reviewed Paper</span>
+            <h3 class="achievement-title">Research Presentation at Computatia2025</h3>
+            <p class="achievement-issuer">International Conference &bull; Computatia 2025</p>
+            <p class="achievement-detail">
+              Presented a peer-reviewed research paper on <strong>AI-driven Intrusion Detection Systems for IoT networks</strong>, analyzing machine learning classifiers for detecting anomalous packet traffic in distributed embedded hardware.
+            </p>
+          </div>
+
+          <!-- Coursera Java -->
+          <div class="achievement-card">
+            <span class="achievement-type-badge">Technical Certification</span>
+            <h3 class="achievement-title">Java Programming &amp; Spring Boot Fundamentals</h3>
+            <p class="achievement-issuer">Coursera</p>
+            <p class="achievement-detail">
+              Comprehensive certification covering Core Java syntax, object-oriented design, collections, multi-threading, Spring Boot dependency injection, and RESTful service construction.
+            </p>
+          </div>
+
+          <!-- Coursera MySQL -->
+          <div class="achievement-card">
+            <span class="achievement-type-badge">Technical Certification</span>
+            <h3 class="achievement-title">MySQL Database Administration &amp; Optimization</h3>
+            <p class="achievement-issuer">Coursera</p>
+            <p class="achievement-detail">
+              Advanced coursework covering relational database design, query execution plan analysis, index optimization, transaction isolation levels, and storage engine mechanics.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Education Section
+         ----------------------------------------------------------------------- -->
+    <section id="education" class="section section-education" aria-labelledby="education-heading">
+      <div class="container">
+        <h2 id="education-heading" class="section-title">
+          <span class="section-num">07.</span> Education
+        </h2>
+
+        <div class="education-card">
+          <div class="edu-header">
+            <div>
+              <h3 class="edu-degree">Bachelor of Engineering in Computer Science</h3>
+              <p class="edu-institution">Chandigarh University &bull; Chandigarh, India</p>
+            </div>
+            <time class="edu-period">2021 &ndash; 2025</time>
+          </div>
+
+          <div class="coursework-container">
+            <div class="coursework-label">Relevant Coursework &amp; Academic Foundations</div>
+            <div class="coursework-chips">
+              <span class="skill-chip">Data Structures &amp; Algorithms</span>
+              <span class="skill-chip">Operating Systems</span>
+              <span class="skill-chip">Database Management Systems (DBMS)</span>
+              <span class="skill-chip">Computer Networks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         Contact Section
+         ----------------------------------------------------------------------- -->
+    <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-container">
+          <h2 id="contact-heading" class="contact-heading">
+            Let's build something meaningful.
+          </h2>
+          <p class="contact-lead">
+            I am currently open to Software Engineer opportunities across backend engineering, full-stack systems, and AI workflows. Reach out through any of the direct channels below.
+          </p>
+
+          <div class="contact-channels-card">
+            <div class="contact-channels-grid">
+              
+              <!-- Direct Email Box -->
+              <div class="channel-box">
+                <span class="channel-label">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  <span>Primary Email</span>
+                </span>
+                <div class="channel-value-row">
+                  <a href="mailto:kharsh.wrk@gmail.com" class="channel-link">kharsh.wrk@gmail.com</a>
+                  <button type="button" id="copy-email-btn" class="copy-btn" data-email="kharsh.wrk@gmail.com" aria-label="Copy email address to clipboard">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Direct Telephone Box (Displayed only here in Contact) -->
+              <div class="channel-box">
+                <span class="channel-label">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  <span>Telephone</span>
+                </span>
+                <div class="channel-value-row">
+                  <a href="tel:+916202447542" class="channel-link">+91 6202447542</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Social Links Row -->
+            <div class="social-links-row">
+              <a href="https://github.com/theharshk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>github.com/theharshk</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/harshkumar731/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+                <span>linkedin.com/in/harshkumar731</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Availability Status Callout -->
+          <div class="contact-availability-box">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Status: Available for Full-Time Software Engineer Roles &bull; Immediate Joiner</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       Site Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <p class="footer-copyright">&copy; 2026 Kumar Harsh. All rights reserved.</p>
+        <p class="footer-tech">Engineered with semantic HTML5, modern CSS custom properties &amp; vanilla JavaScript.</p>
+      </div>
+
+      <a href="#hero" id="back-to-top" class="back-to-top-btn">
+        <span>Back to Top</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Toast Notification for Clipboard Copy Feedback -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- JavaScript Application Entry -->
+  <script src="js/main.js"></script>
+</body>
+</html>
