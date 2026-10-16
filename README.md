@@ -51,11 +51,6 @@ Double-click `index.html` to open directly in any modern desktop or mobile brows
    - Select branch `main` and folder `/ (root)`.
    - Click **Save**. The portfolio will be live in 1-2 minutes.
 
-### Netlify Deployment
-1. Drag and drop the `portfoolio` folder into the Netlify Drop dashboard (`app.netlify.com/drop`), or
-2. Connect your GitHub repository with build command left **blank** and publish directory set to `.`.
-
----
 
 ## 🛠 Project Architecture & Directory Layout
 
